@@ -1,44 +1,33 @@
-function updateCost(targetId, amount) {
-    const memoryCost = document.getElementById(targetId);
-    memoryCost.innerText = amount;
-}
-
-
 const totalAmount = document.getElementById("total-cost");
 const totalAmountNumber = parseInt(totalAmount.innerText)
 const finalCost = document.getElementById("total");
 const finalCostTotal = parseInt(finalCost.innerText)
 
-function updateTotal() {
-    const memory = document.getElementById("memory");
+// update mac quantity cost
+function updateCost(targetId, amount) {
+    const quantityCost = document.getElementById(targetId);
+    quantityCost.innerText = amount;
+}
+
+// convert to Number
+function getId(idName) {
+    const memory = document.getElementById(idName);
     const memoryCost = parseInt(memory.innerText)
-    const storage = document.getElementById("storage")
-    const storageCost = parseInt(storage.innerText)
-    const delivery = document.getElementById("delivery")
-    const deliveryCost = parseInt(delivery.innerText)
+    return memoryCost;
+}
+
+
+// update total price
+function updateTotal() {
+    const memoryCost = getId("memory")
+    const storageCost = getId("storage")
+    const deliveryCost = getId("delivery")
     const totalQuantity = memoryCost + storageCost + deliveryCost;
     totalAmount.innerText = totalAmountNumber + totalQuantity;
 
     // final cost
     finalCost.innerText = totalQuantity + finalCostTotal;
 }
-
-document.getElementById("promo-btn").addEventListener("click", function () {
-    const inputField = document.getElementById("promo-code");
-
-    const finalCost = document.getElementById("total");
-    const finalCostTotal = parseInt(finalCost.innerText)
-    if (inputField.value == "stevekaku") {
-
-        const totalAfterPromo = finalCostTotal * 20 / 100;
-        finalCost.innerText = finalCostTotal - totalAfterPromo;
-    } else {
-        alert("your promo code wrong")
-    }
-    inputField.value = ""
-})
-
-
 
 
 // memory
@@ -76,4 +65,22 @@ document.getElementById("delivery1").addEventListener("click", function () {
 document.getElementById("delivery2").addEventListener("click", function () {
     updateCost("delivery", "20")
     updateTotal()
+})
+
+
+
+// promo code
+document.getElementById("promo-btn").addEventListener("click", function () {
+    const inputField = document.getElementById("promo-code");
+
+    const finalCost = document.getElementById("total");
+    const finalCostTotal = parseInt(finalCost.innerText)
+
+    if (inputField.value == "stevekaku") {
+        const totalAfterPromo = finalCostTotal * 20 / 100;
+        finalCost.innerText = finalCostTotal - totalAfterPromo;
+    } else {
+        alert("your promo code wrong")
+    }
+    inputField.value = ""
 })

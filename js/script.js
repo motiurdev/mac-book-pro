@@ -10,18 +10,18 @@ function updateCost(targetId, amount) {
 }
 
 // convert to Number
-function getId(idName) {
-    const memory = document.getElementById(idName);
-    const memoryCost = parseInt(memory.innerText)
-    return memoryCost;
+function converToNumber(idName) {
+    const priceText = document.getElementById(idName);
+    const priceNumber = parseInt(priceText.innerText)
+    return priceNumber;
 }
 
 
 // update total price
 function updateTotal() {
-    const memoryCost = getId("memory")
-    const storageCost = getId("storage")
-    const deliveryCost = getId("delivery")
+    const memoryCost = converToNumber("memory")
+    const storageCost = converToNumber("storage")
+    const deliveryCost = converToNumber("delivery")
     const totalQuantity = memoryCost + storageCost + deliveryCost;
     totalAmount.innerText = totalAmountNumber + totalQuantity;
 
@@ -83,4 +83,5 @@ document.getElementById("promo-btn").addEventListener("click", function () {
         alert("your promo code wrong")
     }
     inputField.value = ""
+    inputField.disabled = true;
 })

@@ -12,12 +12,90 @@
 </head>
 
 <body>
-    <button class="btn btn-primary">Hello World</button>
+
+    <main>
+        <section class="mt-3">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-md-5">
+                        <img src="images/mac.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7">
+                        <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
+                        <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 effiiciency cores,7-core GPU,
+                            and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports
+                            Magic Mouse Magic Keyboard-Us English.
+                        </p>
+                        <!-- memory -->
+                        <h5 class="mt-5">Memory</h5>
+                        <button id="memory8" type="button" class="btn btn-outline-dark">8GB unified memory</button>
+                        <button id="memory16" type="button" class="btn btn-outline-dark">16GB unified memory</button>
+                        <!-- storage -->
+                        <h5 class="mt-4">Storage</h5>
+                        <button id="storage256" type="button" class="btn btn-outline-dark">256GB SSD Storage</button>
+                        <button id="storage512" type="button" class="btn btn-outline-dark">512GB SSD Storage</button>
+                        <button id="storage1tb" type="button" class="btn btn-outline-dark">1TB SSD Storage</button>
+                        <!-- delivery -->
+                        <h5 class="mt-4">Choose your delivery option</h5>
+                        <button id="delivery1" type="button" class="btn btn-outline-dark">Friday, Aug 25 FREE Prime
+                            Delivery</button>
+                        <button id="delivery2" type="button" class="btn btn-outline-dark">Friday, Aug 21 Delivery charge
+                            $20</button>
+
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Best Price</th>
+                                            <td class="fw-bold">$1299</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Extra Memory Cost</th>
+                                            <td class="fw-bold">$<span id="memory">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Extra Storage Cost</th>
+                                            <td class="fw-bold">$<span id="storage">0</span></td>
+                                        </tr>
+                                        <tr class="border border-bottom border-dark border-start-0 border-end-0">
+                                            <th scope="row">Delivery Charge</th>
+                                            <td class="fw-bold">$<span id="delivery">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total Price</th>
+                                            <td class="fw-bold">$ <span id="total-cost">1299</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- promo code -->
+                                <h6 class="mt-4">Add Promo code</h6>
+                                <div class="input-group mb-3">
+                                    <input id="promo-code" type="text" class="form-control"
+                                        aria-label="Recipient's username" aria-describedby="promo-btn">
+                                    <button class="btn btn-danger" type="button" id="promo-btn">Apply</button>
+                                </div>
+                            </div>
+                            <div class="col-md-5"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h1 class="text-center">Total:$ <span id="total">1299</span></h1>
+            </div>
+        </section>
+    </main>
+
+
+
+
 
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
